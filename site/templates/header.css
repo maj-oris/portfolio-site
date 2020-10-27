@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  flex-direction: row;
+
+  background-color: #212126;
+}
+
+.hcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  padding: 20px;
+  flex: 3;
+}
+
+.hcenter .logo {
+  height: 60px;
+  padding-right: 40px; /* space between logo and header title text */
+}
+
+.hcenter h1 { /* header title */
+  font-size: 60px;
+  color: #1B4274;
+  letter-spacing: 7px;
+}
+
+.hleft, .hright {
+  flex: 1;
+}
+
+.navbarspacer {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+.navbutton:first-of-type {
+  border-left: 1px solid #212126;
+}
+
+.navbar {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  margin-left: -8px; /* An ugly hack, but I can't find the actual culprit causing the misalignment */
+}
+
+.navbutton {
+  padding: 18px;
+  text-decoration: none;
+  color: grey;
+  border-right: 1px solid #212126;
+  width: 120px;
+  text-align: center;
+}
+
+.navbutton:hover {
+  background-color: #212126;
+  color: white;
+}
