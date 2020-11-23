@@ -5,11 +5,3 @@ For now, this portfolio contains only one small website project. I'm an extremel
 Coming next (in the next few days!) will be an implementation of snake in written JavaScript, and an implementation of Tic-Tac-Toe with an AI opponent written in Python. There'll be even more, but my other saved projects require a little more polish before I'll be entirely comfortable with letting the world see them.
 
 After those two, I've always liked the idea of writing a game of chess with an AI opponent. Maybe I'll turn my attention to that. I'd like to create an (optionally SPA) website for it to run on, too, so anyone with a web-browser can run and enjoy it.
-
---------------------------------
-
-The contents of site are the website itself, and this folder should be run on a PHP server.
-
-The contents of site-data are the database, and this folder should be placed within mysql/data.
-
-This site is designed to be accessed locally via localhost.
