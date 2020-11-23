@@ -6,4 +6,4 @@ My current project is a game of Tic-Tac-Toe written in JavaScript. Though it's u
 
 Coming next (hopefully in the next few days!) will be an implementation of snake in written JavaScript. There'll be even more, but my other saved projects require a little more polish before I'll be entirely comfortable with letting the world see them.
 
-After those two, I've always liked the idea of writing a game of chess with an AI opponent.
+After those two, I've always liked the idea of writing a game of chess with an AI opponent, likely in Python. Believe it or not, Python is my main language; I've just been working in JS a lot lately.
