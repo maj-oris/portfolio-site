@@ -20,6 +20,10 @@ var board = [
 
 ///////////////////////////////
 
+function randomArrayElement(inputArray) {
+  return inputArray[Math.floor(Math.random() * inputArray.length)];
+}
+
 function btnsLock() {
   for(j = 0; j < btnArray.length;j++){ btnArray[j].disabled = true; }
 }
@@ -28,24 +32,13 @@ function btnsUnlock() {
   for(j = 0; j < btnArray.length;j++){ btnArray[j].disabled = false; }
 }
 
-/*function boardRender() {
-  board.forEach((item, i) => {
-    switch (item) {
-      case "-":
-        btnArray[i].textContent = "-";
-        break;
-      case "X":
-        btnArray[i].textContent = "X";
-        break;
-      case "O":
-        btnArray[i].textContent = "O";
-        break;
-    }
-  });
-}*/
-
 function boardRender(){
-  
+  board.forEach((row, i) => {
+    row.forEach((square, j) => {
+      btnArray[(i*3 + j)].textContent = board[i][j];
+    });
+  });
+
 }
 
 function getEmptyPos(inputBoard){
@@ -61,24 +54,38 @@ function getEmptyPos(inputBoard){
   });
 
   return emptyIndexes;
-
 }
 
+function playerMove(inputbtn){
+  aN = btnArray.indexOf(inputbtn);
+  var i = Math.floor(aN/3);
+  var j = aN % 3;
+  board[i][j] = "X";
+}
+
+function computerMove(){
+  posMoves = getEmptyPos(board);
+  console.log(posMoves);
+  selectedPos = randomArrayElement(posMoves);
+  console.log(selectedPos);
+  board[selectedPos[0]][selectedPos[1]] = "O";
+}
 
 ///////////////////////////////
 
-board[1][1] = "X";
+boardRender();
 
-console.log(getEmptyPos(board));
-
-/*
 for(i = 0; i < btnArray.length;i++){
   btnArray[i].onclick = function(){
-    console.log(this.id);
-    btnsLock();
-    setTimeout(function(){
-      btnsUnlock();
-    }, 1000);
+    if(this.textContent == "-"){ //player cannot place a marker on an occupied position
+      playerMove(this);
+      boardRender();
+      btnsLock();
+      computerMove();
+      boardRender();
+      setTimeout(function(){
+        btnsUnlock();
+      }, 500);
+    }
   };
 }
-*/
