@@ -1,0 +1,75 @@
+* {
+  /* remove all default browser margins and padding */
+  margin: 0;
+  padding: 0;
+}
+
+.tileButton {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: none;
+  background-color: white;
+}
+
+.tileButton:hover {
+  background-color: #DDDDDD;
+}
+
+.tileButton:disabled {
+  background-color: #CCC;
+}
+
+/* tic-tac-toe square */
+
+#button00 {
+  border-right: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#button02 {
+  border-left: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#button20 {
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+}
+
+#button22 {
+  border-left: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+}
+
+#button01 {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#button21 {
+  border-top: 1px solid #DDDDDD;
+}
+
+#button10 {
+  border-right: 1px solid #DDDDDD;
+}
+
+#button12 {
+  border-left: 1px solid #DDDDDD;
+}
+
+/* */
+
+.btnContainer {
+    border: 1px solid #DDDDDD;
+    width: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.centerContainer {
+  height: 100vh; /* 100% of  viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
