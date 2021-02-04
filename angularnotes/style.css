@@ -1,0 +1,166 @@
+* {
+  /* clear any default browser formatting */
+  padding: 0px;
+  margin: 0px;
+
+  font-family: sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  /* special properties for h1 element in header */
+  font-weight: lighter;
+  padding: 20px;
+}
+
+h1, h2, h3, h4 {
+  /* common properties of all header elements */
+  color: #7889AE;
+  text-align: center;
+}
+
+.master-container {
+  /* this contains both the multipurpose configurable sidebar and the main area where notes are displayed */
+  padding: 20px;
+
+  /* flex properties defining behaviour of children: */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sidebar-container, .notes-container {
+  /*border: 1px solid blue;*/
+  border-radius: 5px;
+  background-color: #DEE6F8;
+  padding: 20px;
+}
+
+.sidebar-container {
+  flex-grow: 1;
+  max-width: 350px;
+  min-width: 250px;
+  margin-right: 20px;
+}
+
+.sidebar-container .titleinput {
+  color: #7889AE;
+  text-align: center;
+  border: 1px solid lightgray;
+  font-size: 20px;
+  font-weight: bold;
+
+  width: 100%;
+}
+
+.sidebar-container textarea {
+  border: 1px solid lightgray;
+  margin: 10px  0px 10px 0px;
+  width: 100%;
+  color: #555555;
+}
+
+button {
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px lightgray;
+  cursor: pointer;
+  color: #68799E;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #C9D1E0;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.redbutton {
+  color: #BF2A2A;
+}
+
+.notes-container {
+  flex-grow: 2;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.note-card {
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px lightgray;
+  min-width: 200px;
+  margin: 0px 0px 10px 10px;
+}
+
+.note-card h3 {
+  margin-bottom: 10px;
+}
+
+.note-card textarea {
+  max-width: 350px;
+  color: #555555;
+  font-size: 15px;
+  padding: 10px;
+  border-color: Transparent;
+  background-color: white;
+}
+
+.note-card span {
+  cursor: pointer;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  color: #888888;
+}
+
+.note-card span:hover {
+  color: #555555;
+}
+
+.whitebackground {
+  background-color: white;
+  padding: 10px;
+}
+
+.topbar {
+  background-color: #3C4A68;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topbar p {
+  color: white;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.topbar .topbaritems {
+  display: inline-block;
+}
+
+.topbaritems button {
+  display: inline-block;
+  margin: 10px;
+  box-shadow: none;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.topbaritems input {
+  display: inline-block;
+  margin: 10px;
+  margin-right: 5px;
+}
+
+.topbaritems label {
+  color: white;
+  font-size: 14px;
+}

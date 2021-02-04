@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Angularnotes</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+    <script src="script.js"></script>
+
+    <!-- scripts -->
+
+    <div class="topbar" ng-show="displayTopbar">
+      <p>This website uses cookies (data stored on your browser) to save your notes between sessions. Do you wish to allow cookies?</p>
+      <div class="topbaritems">
+        <button ng-click="cookiesAllowed()">Allow cookies</button>
+        <button ng-click="cookiesDisallowed()">Do not allow cookies</button>
+        <input type="checkbox" ng-model="cookiesDontAskAgain" id="askagain">
+        <label for="askagain">Remember my choice</label>
+      </div>
+    </div>
+
+    <!-- top bar, for handling cookie permissions (SO FAR NONFUNCTIONAL) -->
+
+    <div class="header">
+      <h1>Angularnotes</h1>
+    </div>
+
+    <!-- simple title -->
+
+    <div class="master-container" ng-app="notesApp" ng-controller="notesAppController">
+
+      <div class="sidebar-container">
+
+        <div ng-show="sidebarSelection=='none'">
+          <!-- this should be displayed if no individual note is selected for editing. -->
+          <button ng-click="newNote()">New Note</button>
+        </div>
+
+        <div ng-show="(sidebarSelection!='none') && (sidebarSelection!='newNote')">
+          <!-- this should be displayed if a note is selected for editing. -->
+          <button class="redbutton" ng-click="deselect()">Return (discard changes!)</button>
+          <br>
+          <br>
+          <div class="whitebackground">
+            <input class="titleinput" ng-model="editedTitle" value={{editedTitle}}>
+            <textarea ng-model="editedText" value="{{editedText}}" rows="15"></textarea>
+            <button ng-click="saveEdits()">Save changes</button>
+          </div>
+        </div>
+
+        <div ng-show="sidebarSelection=='newNote'">
+          <!-- this should be displayed if a new note is being created. -->
+          <button class="redbutton" ng-click="deselect()">Return (discard changes!)</button>
+          <br>
+          <br>
+          <div class="whitebackground">
+            <input class="titleinput" ng-model="newTitle" placeholder="Title">
+            <textarea ng-model="newText" rows="15"></textarea>
+            <button ng-click="saveNewNote()">Save changes</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="notes-container" ng-click="deselect">
+        <!-- this is where all the notes will appear -->
+        <div ng-repeat="i in items">
+          <div class="note-card" ng-show="i[0]=='note'">
+              <span title="Delete item" ng-click="deleteNote($index)">✖</span>
+              <span title="Edit item" ng-click="editNote($index)">✎</span>
+              <span title="Sort item down" ng-hide="$index>(items.length-2)" ng-click="downItem($index)">⯈</span>
+              <span title="Sort item up" ng-hide="$index<1" ng-click="upItem($index)">⯇</span>
+              <h3>{{i[1]}}</h3>
+              <textarea rows="7" cols="50" disabled>{{i[2]}}</textarea>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
