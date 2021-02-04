@@ -1,0 +1,1 @@
+This is a successor to the PHP notes application I wrote a while ago. It's not finished, but the basic functionality is there. This one is much sleeker, and - since it uses Angular.js, this being my first real project with Angular.js as part of my learning process - it's a responsive single-page application. Much more web 2.0!
